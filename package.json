@@ -76,7 +76,12 @@
     "zod": "^4.0.10",
     "zustand": "^5.0.7",
     "react-draggable": "^4.4.6",
-    "react-resizable": "^3.0.6",
+    "re-resizable": "^6.10.3",
+    "monaco-editor": "^0.45.0",
+    "lottie-react": "^2.4.0"
+  },
+  "devDependencies": {
+    "react-resizable": "^3.0.7",
     "monaco-editor": "^0.45.0",
     "lottie-react": "^2.4.0"
   },

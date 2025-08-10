@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Draggable from "react-draggable";
-import { ResizableBox } from "react-resizable";
+import { Resizable } from "re-resizable";
 import { AnimatePresence, motion } from "framer-motion";
-import "react-resizable/css/styles.css";
+
 
 export interface WindowConfig {
   id: string;
@@ -54,12 +54,22 @@ const WindowManager: React.FC<WindowManagerProps> = ({ windows, onClose }) => {
                   position: "absolute" as const,
                 }}
               >
-                <ResizableBox
-                  width={WINDOW_DEFAULT.width}
-                  height={WINDOW_DEFAULT.height}
-                  minConstraints={[WINDOW_DEFAULT.minWidth, WINDOW_DEFAULT.minHeight]}
-                  maxConstraints={[900, 700]}
-                  handle={<span />}
+                <Resizable
+                  defaultSize={{ width: WINDOW_DEFAULT.width, height: WINDOW_DEFAULT.height }}
+                  minWidth={WINDOW_DEFAULT.minWidth}
+                  minHeight={WINDOW_DEFAULT.minHeight}
+                  maxWidth={900}
+                  maxHeight={700}
+                  enable={{
+                    top: true,
+                    right: true,
+                    bottom: true,
+                    left: true,
+                    topRight: true,
+                    bottomRight: true,
+                    bottomLeft: true,
+                    topLeft: true,
+                  }}
                   className="group"
                 >
                   <div className="relative w-full h-full bg-gradient-to-br from-blue-950/95 via-indigo-950/90 to-fuchsia-950/95 rounded-2xl shadow-2xl border border-white/10 overflow-hidden flex flex-col"
@@ -83,7 +93,7 @@ const WindowManager: React.FC<WindowManagerProps> = ({ windows, onClose }) => {
                       <Component onClose={() => onClose(win.id)} />
                     </div>
                   </div>
-                </ResizableBox>
+                </Resizable>
               </motion.div>
             </Draggable>
           );
