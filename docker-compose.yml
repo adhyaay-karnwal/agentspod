@@ -1,0 +1,82 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: wind
+      POSTGRES_PASSWORD: wind
+      POSTGRES_DB: wind
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - default
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+    networks:
+      - default
+
+  api:
+    build:
+      context: ./apps/api
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - .env
+    environment:
+      # Allow the API to accept requests from the web container and local dev browser
+      ALLOWED_ORIGINS: "http://web:3000,http://localhost:3000"
+    expose:
+      - 8000
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./apps/api:/app
+    command: uvicorn wind_api.main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - default
+
+  web:
+    build:
+      context: ./apps/web
+    depends_on:
+      - api
+    env_file:
+      - .env
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./apps/web:/app
+    command: pnpm dev
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+      # API base URL inside the compose network
+      NEXT_PUBLIC_API_BASE: http://api:8000
+    networks:
+      - default
+
+  worker:
+    build:
+      context: ./apps/api
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - .env
+    volumes:
+      - ./apps/api:/app
+    command: python -m wind_api.worker
+    networks:
+      - default
+
+volumes:
+  pgdata: {}
+
+networks:
+  default:
