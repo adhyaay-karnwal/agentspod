@@ -81,12 +81,6 @@
     "lottie-react": "^2.4.0"
   },
   "devDependencies": {
-    "react-resizable": "^3.0.7",
-    "monaco-editor": "^0.45.0",
-    "lottie-react": "^2.4.0"
-  },
-  "devDependencies": {
-    "@types/react-resizable": "^3.0.6",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@testing-library/dom": "^10.4.0",
