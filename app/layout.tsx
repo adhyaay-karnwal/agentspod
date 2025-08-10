@@ -23,19 +23,19 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "AgentsOS - Your AI Coding Operating System",
-  description: "Claude Code + VSCode in your browser. Zero setup. Even works on your phone.",
+  title: "Wind - Your Cloud Coding Companion",
+  description: "Wind: Claude Code + VSCode, right in your browser. Zero setup. Work from anywhere—desktop or mobile.",
   openGraph: {
-    title: "Your AI Coding Operating System",
-    description: "Claude Coder + VSCode in your browser. Zero setup. Even works on your phone.",
-    url: "https://agentsos.app",
-    siteName: "AgentsOS",
+    title: "Wind - Your Cloud Coding Companion",
+    description: "Wind: Claude Code + VSCode, right in your browser. Zero setup. Work from anywhere—desktop or mobile.",
+    url: "https://wind.app",
+    siteName: "Wind",
     images: [
       {
-        url: "/api/og",
+        url: "/api/og", // Update if you have a new OpenGraph image for Wind
         width: 1200,
         height: 630,
-        alt: "AgentsOS - Your AI Coding Operating System",
+        alt: "Wind - Your Cloud Coding Companion",
       },
     ],
     locale: "en_US",
@@ -43,11 +43,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Your AI Coding Operating System",
-    description: "Claude Code + VSCode in your browser. Zero setup. Even works on your phone.",
-    images: ["/api/og"],
+    title: "Wind - Your Cloud Coding Companion",
+    description: "Wind: Claude Code + VSCode, right in your browser. Zero setup. Work from anywhere—desktop or mobile.",
+    images: ["/api/og"], // Update if you have a new Twitter OG image for Wind
   },
-  metadataBase: new URL("https://agentsos.app"),
+  metadataBase: new URL("https://wind.app"),
 };
 
 export default function RootLayout({
@@ -63,7 +63,7 @@ export default function RootLayout({
         >
           <ThemeProvider
             defaultTheme="system"
-            storageKey="agentsos-ui-theme"
+            storageKey="wind-ui-theme"
           >
             {children}
             <Toaster />

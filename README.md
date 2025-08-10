@@ -1,30 +1,32 @@
 <div align="center">
-    <h1>AgentsOS</h1>
+    <h1>Wind</h1>
 </div>
 
 <p align="center">
-    <a href="https://github.com/papay0/agentspod/stargazers"><img src="https://img.shields.io/github/stars/papay0/agentspod?style=social" alt="GitHub stars" /></a>
-    <a href="https://github.com/papay0/agentspod/fork"><img src="https://img.shields.io/github/forks/papay0/agentspod?style=social" alt="GitHub forks" /></a>
-    <a href="https://github.com/papay0/agentspod/blob/main/LICENSE"><img src="https://img.shields.io/github/license/papay0/agentspod" alt="License" /></a>
-    <a href="https://github.com/papay0/agentspod/issues"><img src="https://img.shields.io/github/issues/papay0/agentspod" alt="GitHub issues" /></a>
+    <a href="https://github.com/wind-cloud/wind/stargazers"><img src="https://img.shields.io/github/stars/wind-cloud/wind?style=social" alt="GitHub stars" /></a>
+    <a href="https://github.com/wind-cloud/wind/fork"><img src="https://img.shields.io/github/forks/wind-cloud/wind?style=social" alt="GitHub forks" /></a>
+    <a href="https://github.com/wind-cloud/wind/blob/main/LICENSE"><img src="https://img.shields.io/github/license/wind-cloud/wind" alt="License" /></a>
+    <a href="https://github.com/wind-cloud/wind/issues"><img src="https://img.shields.io/github/issues/wind-cloud/wind" alt="GitHub issues" /></a>
 </p>
 
 ## 📸 Screenshots
 
 ### Desktop Experience
 <div align="center">
-    <img src="https://raw.githubusercontent.com/papay0/agentspod/main/public/screenshots/desktop-workspace.png" alt="AgentsOS Desktop - VSCode and Terminal" width="800">
+    <img src="https://raw.githubusercontent.com/wind-cloud/wind/main/public/screenshots/desktop-workspace.png" alt="Wind Desktop - VSCode and Terminal" width="800">
     <p><em>Split-screen layout with VSCode editor and multi-tab terminal featuring Claude Code CLI</em></p>
 </div>
 
 ### Mobile Experience
 <div align="center">
-    <img src="https://raw.githubusercontent.com/papay0/agentspod/main/public/screenshots/mobile-claude.png" alt="AgentsOS Mobile Terminal" width="250" style="margin: 0 20px;">
-    <img src="https://raw.githubusercontent.com/papay0/agentspod/main/public/screenshots/mobile-homescreen.png" alt="AgentsOS Mobile Homescreen" width="250" style="margin: 0 20px;">
+    <img src="https://raw.githubusercontent.com/wind-cloud/wind/main/public/screenshots/mobile-claude.png" alt="Wind Mobile Terminal" width="250" style="margin: 0 20px;">
+    <img src="https://raw.githubusercontent.com/wind-cloud/wind/main/public/screenshots/mobile-homescreen.png" alt="Wind Mobile Homescreen" width="250" style="margin: 0 20px;">
     <p><em>Full terminal and Claude Code experience on mobile devices</em></p>
 </div>
 
-> Launch on-demand development workspaces with VSCode and Claude Code CLI pre-installed. Code with AI assistance from anywhere, even your phone.
+> Launch on-demand development workspaces with VSCode and Claude Code CLI pre-installed. Code with AI assistance from anywhere, even your phone.  
+>  
+> **Wind** is your cloud coding companion—beautiful, fast, and works everywhere.
 
 ## ✨ Features
 
@@ -142,7 +144,7 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
 
 ### Authentication Setup (Clerk)
 
-AgentsOS uses Clerk for user authentication:
+Wind uses Clerk for user authentication:
 
 1. Create a Clerk application at [Clerk Dashboard](https://dashboard.clerk.com/)
 2. Go to API Keys in your Clerk dashboard
@@ -152,7 +154,7 @@ AgentsOS uses Clerk for user authentication:
 
 ### Firebase Setup
 
-AgentsOS uses Firebase for analytics and waitlist functionality:
+Wind uses Firebase for analytics and waitlist functionality:
 
 1. Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
 2. Enable Analytics and Firestore
@@ -187,8 +189,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <div align="center">
     <p>Made with ❤️ by the open source community</p>
     <p>
-        <a href="https://github.com/papay0/agentspod/issues">Report Bug</a> ·
-        <a href="https://github.com/papay0/agentspod/issues">Request Feature</a> ·
-        <a href="https://github.com/papay0/agentspod/discussions">Discussions</a>
+        <a href="https://github.com/wind-cloud/wind/issues">Report Bug</a> ·
+        <a href="https://github.com/wind-cloud/wind/issues">Request Feature</a> ·
+        <a href="https://github.com/wind-cloud/wind/discussions">Discussions</a>
     </p>
 </div>
