@@ -74,9 +74,14 @@
     "vaul": "^1.1.2",
     "ws": "^8.18.3",
     "zod": "^4.0.10",
-    "zustand": "^5.0.7"
+    "zustand": "^5.0.7",
+    "react-draggable": "^4.4.6",
+    "react-resizable": "^3.0.7",
+    "monaco-editor": "^0.45.0",
+    "react-lottie-player": "^1.7.2"
   },
   "devDependencies": {
+    "@types/react-resizable": "^3.0.6",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@testing-library/dom": "^10.4.0",
