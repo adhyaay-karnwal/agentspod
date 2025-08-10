@@ -78,7 +78,7 @@
     "react-draggable": "^4.4.6",
     "react-resizable": "^3.0.7",
     "monaco-editor": "^0.45.0",
-    "react-lottie-player": "^1.7.2"
+    "lottie-react": "^2.4.0"
   },
   "devDependencies": {
     "@types/react-resizable": "^3.0.6",

@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Lottie from "react-lottie-player";
+import Lottie from "lottie-react";
 import sampleLottieData from "./wind-lottie.json";
 import { useRef } from "react";
 
@@ -64,9 +64,9 @@ export default function Hero() {
           className="w-[280px] md:w-[340px] mt-2"
         >
           <Lottie
-            loop
             animationData={sampleLottieData}
-            play
+            loop
+            autoplay
             style={{ width: "100%", height: "auto" }}
           />
         </motion.div>
