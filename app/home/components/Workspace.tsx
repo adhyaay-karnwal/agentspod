@@ -120,7 +120,7 @@ export default function Workspace() {
           setTimeout(() => {
             addWindow({
               type: 'setup',
-              title: 'Welcome to AgentsOS',
+              title: 'Welcome to Wind',
               position: { x: 50, y: 50 },
               size: { width: 1200, height: 800 },
               minimized: false,
@@ -236,7 +236,7 @@ export default function Workspace() {
         const activeWorkspace = workspaces.find(w => w.id === activeWorkspaceId);
         const workspaceName = activeWorkspace?.name 
           ? `${activeWorkspace.name} Workspace` 
-          : 'AgentsOS Workspace';
+          : 'Wind Workspace';
 
         // Render desktop workspace - terminals will start loading immediately
         mainContent = (

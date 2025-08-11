@@ -68,56 +68,63 @@ export default function MenuBar() {
   }, []);
 
   return (
-    <div className="absolute top-0 left-0 right-0 h-8 bg-black/20 backdrop-blur-md border-b border-white/10 flex items-center justify-between px-4 text-white text-sm z-50">
-      {/* Left side - User avatar + AgentsOS */}
-      <div className="flex items-center space-x-3">
-        <div className="flex items-center space-x-2">
-          {/* User avatar */}
-          <SignedIn>
-            <div className="flex items-center scale-75">
-              <UserButton 
-                appearance={{
-                  elements: {
-                    userButtonPopoverCard: "bg-black/90 backdrop-blur-xl border-white/20",
-                    userButtonPopoverActionButton: "text-white hover:bg-white/10",
-                    userButtonPopoverActionButtonText: "text-white",
-                    userButtonPopoverActionButtonIcon: "text-white",
-                    userButtonPopoverFooter: "hidden"
-                  }
-                }}
-              />
-            </div>
-          </SignedIn>
-          <span className="font-semibold">AgentsOS</span>
+    // Full-width translucent bar
+    <div className="absolute inset-x-0 top-0 h-10 flex items-center px-6 z-50 text-white/90 text-sm select-none">
+      {/* Date & time – left side */}
+      <div className="flex items-center gap-2">
+        <Clock className="w-4 h-4" />
+        <span>{currentTime}</span>
+        <span className="hidden sm:inline">• {currentDate}</span>
+      </div>
+
+      {/* Center notch */}
+      <div className="relative flex-1 flex justify-center pointer-events-none">
+        <div
+          className="
+            pointer-events-auto
+            px-6 py-1.5
+            rounded-b-xl
+            bg-black/60
+            dark:bg-black/70
+            backdrop-blur-lg
+            border
+            border-white/15
+            text-base
+            font-semibold
+            tracking-tight
+          "
+          style={{
+            borderTop: 'none',
+            minWidth: '140px'
+          }}
+        >
+          Wind
         </div>
       </div>
 
-      {/* Center - Workspace switcher and health */}
-      <div className="flex-1 flex justify-center items-center gap-2">
-        <div className="bg-white/10 backdrop-blur-sm rounded-md border border-white/20">
-          <WorkspaceSwitcher />
-        </div>
-        <div className="bg-white/10 backdrop-blur-sm rounded-md border border-white/20">
-          <WorkspaceHealth />
-        </div>
-      </div>
-
-      {/* Right side - System status */}
-      <div className="flex items-center space-x-3">
-        {/* Port shortcut */}
-        <PortShortcutIcon />
-        
-        {/* Theme switcher */}
+      {/* Right utilities */}
+      <div className="flex items-center gap-3 ml-auto">
+        {/* Theme toggle */}
         <MenuBarThemeToggle />
 
-        {/* Date and time */}
-        <div className="flex items-center space-x-2">
-          <span className="text-xs">{currentDate}</span>
-          <div className="flex items-center space-x-1">
-            <Clock className="w-4 h-4" />
-            <span className="text-xs">{currentTime}</span>
+        {/* User avatar */}
+        <SignedIn>
+          <div className="flex items-center scale-75">
+            <UserButton
+              appearance={{
+                elements: {
+                  userButtonPopoverCard:
+                    'bg-black/90 backdrop-blur-xl border-white/20',
+                  userButtonPopoverActionButton:
+                    'text-white hover:bg-white/10',
+                  userButtonPopoverActionButtonText: 'text-white',
+                  userButtonPopoverActionButtonIcon: 'text-white',
+                  userButtonPopoverFooter: 'hidden',
+                },
+              }}
+            />
           </div>
-        </div>
+        </SignedIn>
       </div>
     </div>
   );

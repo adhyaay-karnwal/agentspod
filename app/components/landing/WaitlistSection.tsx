@@ -50,10 +50,10 @@ export function WaitlistSection() {
           <div className="bg-gray-50 dark:bg-white/[0.02] backdrop-blur-sm rounded-3xl p-12 border border-gray-200 dark:border-white/[0.08]">
             <div className="text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-                Join the Waitlist
+                Join the Wind Waitlist
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-10">
-                Get early access to the AI-first development OS
+                Get early access to the world’s first cloud employee
               </p>
 
               {isSubmitted ? (
@@ -84,7 +84,7 @@ export function WaitlistSection() {
                     />
                     <Input
                       type="text"
-                      placeholder="How do you plan to use AgentsOS? (optional)"
+                      placeholder="How do you plan to use Wind? (optional)"
                       value={useCase}
                       onChange={(e) => setUseCase(e.target.value)}
                       disabled={isSubmitting}
@@ -106,7 +106,7 @@ export function WaitlistSection() {
                   )}
                   
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Or <a href="https://github.com/papay0/AgentsOS" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 underline hover:text-indigo-700 dark:hover:text-indigo-300">self-host</a> the open source version
+                    Prefer self-hosting? <a href="https://github.com/papay0/AgentsOS" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 underline hover:text-indigo-700 dark:hover:text-indigo-300">Deploy Wind yourself</a>.
                   </p>
                 </form>
               )}

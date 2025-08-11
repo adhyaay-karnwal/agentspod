@@ -5,36 +5,37 @@ import { Monitor, Brain, Smartphone, GitBranch } from 'lucide-react';
 import { AgentsBentoGrid, type BentoItem } from '@/components/ui/agents-bento-grid';
 import './AgentsOSArchitecture.css';
 
-const agentsOSFeatures: BentoItem[] = [
+// Feature list showcasing Wind's key differentiators as the first cloud employee
+const windFeatures: BentoItem[] = [
   {
-    title: "Native Desktop",
+    title: "Works Like a Human",
     meta: "",
-    description: "Windows, dock, apps. Like your local machine.",
-    icon: <Monitor className="w-6 h-6 text-blue-600" />,
+    description: "Sees the screen, moves the mouse, types the keyboard.",
+    icon: <Monitor className="w-6 h-6 text-blue-600" />, // re-use icon set for now
     tags: [],
     colSpan: 2,
     hasPersistentHover: true,
     showArchitecture: false,
   },
   {
-    title: "AI Tools Built-in",
+    title: "Real Applications",
     meta: "",
-    description: "Claude Code, AI agents, and more. Ready to use.",
+    description: "Chrome, Excel, Outlook – anything your team already loves.",
     icon: <Brain className="w-6 h-6 text-purple-600" />,
     tags: [],
   },
   {
-    title: "GitHub Setup",
+    title: "Truly No-Code",
     meta: "",
-    description: "Connect repos, start coding. No config needed.",
+    description: "Deploy powerful workflows without engineering effort.",
     icon: <GitBranch className="w-6 h-6 text-green-600" />,
     tags: [],
     colSpan: 2,
   },
   {
-    title: "Mobile Native",
+    title: "24/7 In the Cloud",
     meta: "",
-    description: "Full dev power on your phone.",
+    description: "Wind runs continuously so your business never sleeps.",
     icon: <Smartphone className="w-6 h-6 text-orange-600" />,
     tags: [],
   },
@@ -53,11 +54,11 @@ export function FeaturesSection() {
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             <span className="text-gray-900 dark:text-white">
-              Development Reimagined
+              Meet Your New Cloud Employee
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Experience a native operating system designed for AI-powered development
+            Wind autonomously operates real software to take entire workflows off your plate.
           </p>
         </motion.div>
 
@@ -67,7 +68,7 @@ export function FeaturesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <AgentsBentoGrid items={agentsOSFeatures} />
+          <AgentsBentoGrid items={windFeatures} />
         </motion.div>
       </div>
     </section>

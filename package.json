@@ -1,5 +1,6 @@
 {
-  "name": "agentsos",
+  "name": "wind-space",
+  "description": "Wind – a spacious, futuristic cloud operating system",
   "version": "0.1.0",
   "private": true,
   "scripts": {
