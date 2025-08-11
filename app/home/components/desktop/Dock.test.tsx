@@ -142,15 +142,18 @@ describe('Dock Component', () => {
     it('has correct dock positioning', () => {
       const { container } = render(<Dock />)
       
-      const dockContainer = container.querySelector('.fixed.bottom-2')
+      // Updated selector to match the new bottom notch design
+      const dockContainer = container.querySelector('.fixed.bottom-0')
       expect(dockContainer).toBeInTheDocument()
-      expect(dockContainer).toHaveClass('fixed', 'bottom-2', 'left-1/2', 'transform', '-translate-x-1/2')
+      // Updated class expectations to match new positioning
+      expect(dockContainer).toHaveClass('fixed', 'bottom-0')
     })
 
     it('applies glass effect styling', () => {
       const { container } = render(<Dock />)
       
-      const glassEffect = container.querySelector('.rounded-3xl')
+      // Updated selector to match the new glass effect in bottom notch design
+      const glassEffect = container.querySelector('.backdrop-blur-lg')
       expect(glassEffect).toBeInTheDocument()
     })
 
@@ -174,8 +177,8 @@ describe('Dock Component', () => {
 
       const { container } = render(<Dock />)
       
-      // Check that dock-specific elements are not present
-      expect(container.querySelector('.fixed.bottom-2')).not.toBeInTheDocument()
+      // Updated selector to match the new bottom positioning
+      expect(container.querySelector('.fixed.bottom-0')).not.toBeInTheDocument()
       expect(screen.queryAllByRole('button')).toHaveLength(0)
     })
   })

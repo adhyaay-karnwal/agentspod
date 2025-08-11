@@ -101,14 +101,15 @@ describe('MenuBar Component', () => {
       // The menubar is wrapped by ClerkProvider, so we need to find the actual menubar
       const menubar = container.querySelector('.absolute.top-0') as HTMLElement
       expect(menubar).toBeInTheDocument()
-      expect(menubar).toHaveClass('absolute', 'top-0', 'left-0', 'right-0', 'h-8')
-      expect(menubar).toHaveClass('bg-black/20', 'backdrop-blur-md')
+      // Updated classes to match new notch design
+      expect(menubar).toHaveClass('absolute', 'inset-x-0', 'top-0', 'h-10')
     })
 
-    it('displays AgentsOS branding', () => {
+    it('displays Wind branding', () => {
       render(<MenuBar />)
       
-      expect(screen.getByText('AgentsOS')).toBeInTheDocument()
+      // Updated to check for "Wind" instead of "AgentsOS"
+      expect(screen.getByText('Wind')).toBeInTheDocument()
     })
 
     it('shows current time', () => {
@@ -122,7 +123,9 @@ describe('MenuBar Component', () => {
       render(<MenuBar />)
       
       // Should show date in format like "Mon, Jan 1"
-      expect(screen.getByText('Mon, Jan 1')).toBeInTheDocument()
+      expect(
+        screen.getByText((content) => content.includes('Mon, Jan 1'))
+      ).toBeInTheDocument()
     })
 
     it('displays theme toggle', () => {
@@ -211,34 +214,32 @@ describe('MenuBar Component', () => {
   })
 
   describe('Layout and Positioning', () => {
-    it('has correct left section with user and branding', () => {
+    it('has left section with date and time', () => {
       render(<MenuBar />)
       
-      const agentsOSText = screen.getByText('AgentsOS')
-      const userButton = screen.getByTestId('user-button')
-      
-      // Both should be in the left section
-      expect(agentsOSText).toBeInTheDocument()
-      expect(userButton).toBeInTheDocument()
-    })
-
-    it('has right section with date and time', () => {
-      render(<MenuBar />)
-      
-      // Check right section elements
-      expect(screen.getByText('Mon, Jan 1')).toBeInTheDocument() // Date
+      // Updated to check for date and time in left section
+      expect(
+        screen.getByText((content) => content.includes('Mon, Jan 1'))
+      ).toBeInTheDocument() // Date
       expect(screen.getByText(/\d+:\d+/)).toBeInTheDocument() // Time
     })
 
-    it('has center section for active window info', () => {
+    it('has center section with Wind branding', () => {
       const { container } = render(<MenuBar />)
       
+      // Updated to check for center section with Wind branding
       const centerSection = container.querySelector('.flex-1.flex.justify-center')
       expect(centerSection).toBeInTheDocument()
+      expect(screen.getByText('Wind')).toBeInTheDocument()
+    })
+
+    it('has right section with user controls', () => {
+      const { container } = render(<MenuBar />)
       
-      // Check that workspace switcher and health are present
-      expect(screen.getByTestId('workspace-switcher')).toBeInTheDocument()
-      expect(screen.getByTestId('workspace-health')).toBeInTheDocument()
+      // Updated to check for right section with user controls
+      const rightSection = container.querySelector('.flex.items-center.gap-3.ml-auto')
+      expect(rightSection).toBeInTheDocument()
+      expect(screen.getByTestId('user-button')).toBeInTheDocument()
     })
   })
 
@@ -248,8 +249,8 @@ describe('MenuBar Component', () => {
       
       const menubar = container.querySelector('.absolute.top-0') as HTMLElement
       expect(menubar).toBeInTheDocument()
-      expect(menubar).toHaveClass('bg-black/20', 'backdrop-blur-md')
-      expect(menubar).toHaveClass('border-b', 'border-white/10')
+      // Updated classes for new design
+      expect(menubar).toHaveClass('text-white/90')
     })
 
     it('has white text styling', () => {
@@ -257,7 +258,7 @@ describe('MenuBar Component', () => {
       
       const menubar = container.querySelector('.absolute.top-0') as HTMLElement
       expect(menubar).toBeInTheDocument()
-      expect(menubar).toHaveClass('text-white', 'text-sm')
+      expect(menubar).toHaveClass('text-sm')
     })
 
     it('has correct z-index for overlay', () => {
@@ -273,9 +274,12 @@ describe('MenuBar Component', () => {
     it('shows date display', () => {
       render(<MenuBar />)
       
-      const dateText = screen.getByText('Mon, Jan 1')
+      const dateText = screen.getByText((content) =>
+        content.includes('Mon, Jan 1')
+      )
       expect(dateText).toBeInTheDocument()
-      expect(dateText).toHaveClass('text-xs')
+      // Updated class to match new design
+      expect(dateText).not.toHaveClass('text-xs')
     })
 
     it('shows time with clock icon', () => {
@@ -283,7 +287,8 @@ describe('MenuBar Component', () => {
       
       const timeText = screen.getByText('02:30 PM')
       expect(timeText).toBeInTheDocument()
-      expect(timeText).toHaveClass('text-xs')
+      // Updated class to match new design
+      expect(timeText).not.toHaveClass('text-xs')
     })
   })
 
